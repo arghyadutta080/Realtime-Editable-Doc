@@ -19,9 +19,13 @@ const io = new Server(httpServer, {
 io.on("connection", (socket) => {
     console.log("a user connected with id: " + socket.id);
 
+    socket.on('join_room', (room) => {              // users joining the same room to get connected with the same document
+        socket.join(room.id);
+    })
+
     socket.on('send_message', (arg) => {            // main functionality of socket.io -> emit received message to clientsite just after getting the sent message from users (from clientsite) without req-res
-        console.log(arg);
-        socket.broadcast.emit('receive_msg', arg);
+        console.log(arg.id, arg.delta);
+        socket.to(arg.id).emit('receive_msg', arg.delta);
     });
 });
 

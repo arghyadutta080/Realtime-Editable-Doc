@@ -3,7 +3,7 @@ import "./App.css";
 
 import TextEditor from "./components/TextEditor";
 
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App: React.FC = () => {
   // // const [text, setText] = React.useState<string>("");
@@ -51,9 +51,15 @@ const App: React.FC = () => {
 
   return (
     <>
-      <div>
+      {/* <div>
         <TextEditor />
-      </div>
+      </div> */}
+      <Router>
+        <Routes>
+          <Route path="/" element={<TextEditor />} />
+          <Route path="/document/:id" element={<TextEditor />} />
+        </Routes>
+      </Router>
     </>
   );
 };

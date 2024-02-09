@@ -5,6 +5,8 @@ import { ImageResize } from "quill-image-resize-module-ts";
 import BlotFormatter from "quill-blot-formatter";
 
 import { io } from "socket.io-client";
+import { useNavigate, useParams } from "react-router-dom";
+import { v4 as uuidv4 } from 'uuid';
 
 
 Quill.register("modules/imageResize", ImageResize);
@@ -43,6 +45,10 @@ const TextEditor: React.FC = () => {
     blotFormatter: {},
   };
 
+  const navigate = useNavigate();
+
+  const {id} = useParams();
+
   const containerRef = useCallback((container: any) => {
     if (container == null) return;
 
@@ -59,6 +65,10 @@ const TextEditor: React.FC = () => {
 
   useEffect(() => {
     socket = io("http://localhost:3001");
+    if(!id){
+      navigate(`/document/${uuidv4()}`)
+    }
+    socket.emit("join_room", {id})
 
     return () => {
       socket.disconnect();
@@ -72,7 +82,7 @@ const TextEditor: React.FC = () => {
       if (source == "api") {
         return;
       } else if (source == "user") {
-        socket.emit("send_message", delta);
+        socket.emit("send_message", {delta, id});
       }
     };
     quill.on("text-change", handler);

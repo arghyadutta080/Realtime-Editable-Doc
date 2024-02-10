@@ -65,6 +65,7 @@ const TextEditor: React.FC = () => {
     });
   }, []);
 
+
   useEffect(() => {
     socket = io("http://localhost:3001");
     if (!id) {
@@ -77,6 +78,7 @@ const TextEditor: React.FC = () => {
       socket.disconnect();
     };
   }, []);
+
 
   useEffect(() => {
     if (!socket || !quill) return;
@@ -106,6 +108,7 @@ const TextEditor: React.FC = () => {
     };
   }, [quill, socket]);
 
+
   // effect-1
   useEffect(() => {
     const handler = (delta: any, oldDelta: any, source: any) => {
@@ -125,6 +128,7 @@ const TextEditor: React.FC = () => {
     };
   }, [socket, quill]);
 
+
   // effect-2
   useEffect(() => {
     const handler = (delta: any) => {
@@ -137,6 +141,7 @@ const TextEditor: React.FC = () => {
     };
   }, [socket, quill]);
 
+  
   return (
     <>
       <div id="container" ref={containerRef}></div>

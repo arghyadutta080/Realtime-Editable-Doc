@@ -30,16 +30,17 @@ io.on("connection", (socket) => {
         const docData = await findOrCreateDoc(room.id); 
         socket.emit('get_doc', docData);  // emit the document to the clientsite just after joining the room    
         
-        socket.on('save_doc', async (arg) => { 
-            console.log("save dov", arg.id, arg.data);
-            await docs.findByIdAndUpdate(arg.id, { data: arg.data });         
-        });
-        
-        socket.on('send_message', (arg) => {            // main functionality of socket.io -> emit received message to clientsite just after getting the sent message from users (from clientsite) without req-res
-            console.log(arg.id, arg.delta);
-            socket.to(arg.id).emit('receive_msg', arg.delta);
-        });
     })
+    
+    socket.on('save_doc', async (arg) => { 
+        console.log("save dov", arg.id, arg.data);
+        await docs.findByIdAndUpdate(arg.id, { data: arg.data });         
+    });
+    
+    socket.on('send_message', (arg) => {            // main functionality of socket.io -> emit received message to clientsite just after getting the sent message from users (from clientsite) without req-res
+        console.log(arg.id, arg.delta);
+        socket.to(arg.id).emit('receive_msg', arg.delta);
+    });
 
 
 });
@@ -56,7 +57,7 @@ const findOrCreateDoc = async (id) => {
     console.log("findOrCreateDoc", id)
     if(id == null) return;
     const document = await docs.findById(id);
-    console.log(document.data.ops);
+    console.log(document);
     if(document) return document;
     const newDoc = new docs({ _id: id, data: defaultData}); 
     await newDoc.save();

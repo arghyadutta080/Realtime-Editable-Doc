@@ -32,8 +32,8 @@ To run this project locally, follow these steps:
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/arghyadutta080/Chatbot.git
-    cd Chatbot
+    git clone https://github.com/arghyadutta080/Realtime-Editable-Doc.git
+    cd web sockets
     ```
 2. **Open the `web sockets` directory in your Code-Editor (In my case it's VS-Code)**
 

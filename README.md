@@ -12,6 +12,9 @@ This web-application made as a mini clone of Google-Doc with the realtime docume
 <a href="" target="_blank" rel="noreferrer"> <img src="https://skillicons.dev/icons?i=express" alt="react" width="37" height="37"/> </a>
 <a href="" target="_blank" rel="noreferrer"> <img src="https://skillicons.dev/icons?i=mongodb" alt="react" width="37" height="37"/> </a>
 
+# Doc working demo video
+
+https://github.com/arghyadutta080/Realtime-Editable-Doc/assets/102239340/3488cd79-78c8-4061-892c-679c34b19d4d
 
 
 ## UI of the Web-App

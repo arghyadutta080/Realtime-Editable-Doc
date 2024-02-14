@@ -1,6 +1,6 @@
 # Realtime Editable Document
 
-This web-application made as a mini clone of Google-Doc with the realtime documentation updation and store the data in database field
+This web-application made as a mini clone of Google-Doc with the realtime documentation updation and store the data in database
 
 
 ## Tech Stacks

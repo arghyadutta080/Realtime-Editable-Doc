@@ -67,8 +67,7 @@ const TextEditor: React.FC = () => {
 
 
   useEffect(() => {
-    socket = io("https://realtime-editable-doc-server.vercel.app");
-    // socket = io("http://localhost:3001");
+    socket = io("http://localhost:3001");
     if (!id) {
       navigate(`/document/${uuidv4()}`);
     }

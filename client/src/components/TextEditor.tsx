@@ -117,7 +117,7 @@ const TextEditor: React.FC = () => {
         return;
       } else if (source == "user") {
         // setQuillEnable(true);
-        oldDelta;
+        console.log(oldDelta);
         socket.emit("send_message", { delta, id });
         console.log(quill.getContents());
         console.log(quillEnableRef.current);

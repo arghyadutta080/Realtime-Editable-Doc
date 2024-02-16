@@ -1,6 +1,6 @@
 # Realtime Editable Document
 
-This web-application made as a mini clone of Google-Doc with the realtime documentation updation and store the data in database field
+This web-application made as a mini clone of Google-Doc with the realtime documentation updation and store the data in database
 
 
 ## Tech Stacks
@@ -12,6 +12,9 @@ This web-application made as a mini clone of Google-Doc with the realtime docume
 <a href="" target="_blank" rel="noreferrer"> <img src="https://skillicons.dev/icons?i=express" alt="react" width="37" height="37"/> </a>
 <a href="" target="_blank" rel="noreferrer"> <img src="https://skillicons.dev/icons?i=mongodb" alt="react" width="37" height="37"/> </a>
 
+# Doc working demo video
+
+https://github.com/arghyadutta080/Realtime-Editable-Doc/assets/102239340/3488cd79-78c8-4061-892c-679c34b19d4d
 
 
 ## UI of the Web-App
@@ -29,8 +32,8 @@ To run this project locally, follow these steps:
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/arghyadutta080/Chatbot.git
-    cd Chatbot
+    git clone https://github.com/arghyadutta080/Realtime-Editable-Doc.git
+    cd web sockets
     ```
 2. **Open the `web sockets` directory in your Code-Editor (In my case it's VS-Code)**
 

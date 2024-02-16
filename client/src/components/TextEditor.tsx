@@ -67,7 +67,8 @@ const TextEditor: React.FC = () => {
 
 
   useEffect(() => {
-    socket = io("http://localhost:3001");
+    socket = io("https://realtime-editable-doc-server.vercel.app");
+    // socket = io("http://localhost:3001");
     if (!id) {
       navigate(`/document/${uuidv4()}`);
     }
@@ -116,6 +117,7 @@ const TextEditor: React.FC = () => {
         return;
       } else if (source == "user") {
         // setQuillEnable(true);
+        oldDelta;
         socket.emit("send_message", { delta, id });
         console.log(quill.getContents());
         console.log(quillEnableRef.current);
